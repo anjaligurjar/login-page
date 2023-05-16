@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import react, { useState } from 'react';
 
 const Dashboard = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -37,7 +37,7 @@ const Dashboard = () => {
       {showRegister ? (
         <div>
           <h3>Register Panel</h3>
-          {/* Add your registration component or form here */}
+        
         </div>
       ) : (
         <button onClick={handleToggleRegister}>Show Register</button>
