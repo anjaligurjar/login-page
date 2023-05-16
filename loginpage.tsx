@@ -19,7 +19,7 @@ function Login() {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    // handle login logic here
+
     setIsLoggedIn(true);
   };
 
@@ -35,11 +35,23 @@ function Login() {
         <form onSubmit={handleLogin}>
           <div className="input-container">
             <FaUser />
-            <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} required />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={handleEmailChange}
+              required
+            />
           </div>
           <div className="input-container">
             <FaLock />
-            <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange} required />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
           </div>
           <button type="submit">Login</button>
         </form>
