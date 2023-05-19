@@ -1,20 +1,21 @@
-import { AppBar } from '@mui/material';
-import * as React from 'react';
-import { Topography, AppBar, Button } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Courses from './pages/Courses';
 
-import './App.css';
-import Toolbar from '@mui/material/Toolbar';
-
-export default function App() {
+function App() {
   return (
-    <div className="searchcontainer">
-      <AppBar>
-        <Toolbar>
-          <SearchIcon />
-          <Topography variant="h3"> </Topography>
-        </Toolbar>
-      </AppBar>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/Courses" element={<Courses />} />
+          <Route path="/Price" element={<Price />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

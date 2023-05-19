@@ -13,22 +13,13 @@ import Logo from '../../images/logo.svg';
 import { NavLink } from 'react-router-dom';
 import '../../styles/HeaderStyles.css';
 const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  // hndle menu click
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  //menu drawer
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography
-        color={'goldenrod'}
-        variant="h6"
-        component="div"
-        sx={{ flexGrow: 1, my: 2 }}
-      >
-        <img src={Logo} alt="logo" height={'70'} width="200" />
-      </Typography>
+      <Typography></Typography>
       <Divider />
       <ul className="mobile-navigation">
         <li>
@@ -56,22 +47,8 @@ const Header = () => {
       <Box>
         <AppBar component={'nav'} sx={{ bgcolor: 'black' }}>
           <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              sx={{
-                mr: 2,
-                display: { sm: 'none' },
-              }}
-              onClick={handleDrawerToggle}
-            ></IconButton>
-            <Typography
-              color={'goldenrod'}
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1 }}
-            >
+            <IconButton onClick={handleDrawerToggle}></IconButton>
+            <Typography>
               <img src={Logo} alt="logo" height={'70'} width="250" />
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -81,7 +58,7 @@ const Header = () => {
                     Home
                   </NavLink>
                 </li>
-                <li></li>
+
                 <li>
                   <NavLink to={'/about'}>About</NavLink>
                 </li>
@@ -93,20 +70,7 @@ const Header = () => {
           </Toolbar>
         </AppBar>
         <Box component="nav">
-          <Drawer
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            sx={{
-              display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': {
-                boxSizing: 'border-box',
-                width: '240px',
-              },
-            }}
-          >
-            {drawer}
-          </Drawer>
+          <Drawer>{drawer}</Drawer>
         </Box>
         <Box>
           <Toolbar />
